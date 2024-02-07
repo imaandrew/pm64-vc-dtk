@@ -221,6 +221,21 @@ config.libs = [
             Object(NonMatching, "Runtime.PPCEABI.H/__init_cpp_exceptions.cpp"),
         ],
     },
+    {
+        "lib": "game",
+        "mw_version": config.linker_version,
+        "cflags": cflags_base,
+        "host": False,
+        "objects": [
+            Object(Matching, "xlText.c"),
+            Object(NonMatching, "xlFile.c"),
+            Object(NonMatching, "xlHeap.c"),
+            Object(NonMatching, "xlList.c"),
+            Object(NonMatching, "xlObject.c"),
+            Object(NonMatching, "ram.c"),
+            Object(NonMatching, "rom.c")
+        ],
+    },
 ]
 
 if args.mode == "configure":
